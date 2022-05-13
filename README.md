@@ -4,8 +4,6 @@ Forkify is a fully functional recipe web application that allows users to find t
 
 **Link to project:** https://forkify-orlando.netlify.app/
 
-![alt tag](src\img\forkify-gif.gif)
-
 ![forkify-gif](https://user-images.githubusercontent.com/99216709/168296642-829a65ee-f83d-44ce-993b-19ff9b96ff6d.gif)
 
 ## How It's Made:
