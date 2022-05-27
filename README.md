@@ -10,28 +10,23 @@ Forkify is a fully functional recipe web application that allows users to find t
 
 **Tech used:** HTML, CSS, Sass, JavaScript, Parcel, Forkify API
 
-Here's where you can go to town on how you actually built this thing. Write as much as you can here, it's totally fine if it's not too much just make sure you write _something_. If you don't have too much experience on your resume working on the front end that's totally fine. This is where you can really show off your passion and make up for that ten fold.
+Forkify's API was an excellent choice for creating this application because it offered a diverse set of recipes and great performance. Once I developed an understanding of how Recipe data was delivered from the API I was able to build the search functionality, which pulled recipes from the database based on input from the user and manipulated the DOM to display the results. Implementing pagination for search results that exceeded 10 recipes was a part of this process as well.
 
-Forkify's API was an excellent choice for creating this application because it offered a diverse set of recipes and great performance. Once I developed an understanding of how Recipe data was delivered from the API I was able to build the search functionality which pulled recipes from the database based on input from the user and manipulated the DOM to display the results. Implementing pagination for search results that exceeded 10 recipes was a part of this process as well.
+Next, the bookmark feature was added which allows users to save their favorite recipes for later reference. This features utilizes the local storage of the user's browser to keep track of which recipe's were bookmarked across multiple sessions/refreshes. Ideally, a sign in feature will be added in the future that allows the bookmarks to persist without using the browser's local storage feature. 
 
-Next, the bookmark feature was added
+Finally, the last step was to incorporate the user's ability to add new recipe's to the applicaton. These recipe's must be input a certain way (as directed by the default values), otherwise the recipe will not be displayed correctly in the application. This process is acceptable in its current state, but could certainly be improved upon in a future update. Once the recipe is added the user can find it automatically included in their bookmarks and also discoverable via a search with any key word found in the title of the recipe. 
+
+Another important features includes the user's ability to adjust serving sizes for each recipe.
 
 ## Optimizations
 
-_(optional)_
+In the future I plan to incorporate additonal features and UX improvements:
 
-You don't have to include this section but interviewers _love_ that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+- User authentication
+- Addition of multiple page numbers to select from instead of just "next" and "previous" in the pagination feature
 
-## Lessons Learned:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those _whoa this is awesome_ or _fuck yeah I did it!_ moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+The following bugs have been identified and will be corrected in a future update:
 
-## Examples:
-
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
+- Recipe ingredients quantity turns into decimals when the user changes the servings to certain sizes (uneven multiples of the initially intended servings size)
+- Inconsistency in loading images for user-uploaded recipes
