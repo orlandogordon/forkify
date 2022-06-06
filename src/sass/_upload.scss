@@ -97,3 +97,13 @@
     justify-self: center;
   }
 }
+
+@media only screen and (max-width: $bp-small) {
+  .add-recipe-window {
+    max-width: 100vw;
+  }
+  .upload {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
