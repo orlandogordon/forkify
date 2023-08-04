@@ -33,12 +33,10 @@ export const loadRecipe = async function (id) {
   try {
     const data = await AJAX(`${API_URL}/${id}?key=${KEY}`);
     state.recipe = createRecipeObject(data);
-    // console.log(res, data);
 
     if (state.bookmarks.some(bookmark => bookmark.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
-    console.log(state.recipe);
   } catch (err) {
     console.error(`${err} 💥💥💥`);
     throw err;
@@ -49,7 +47,6 @@ export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-    console.log(data);
 
     state.search.results = data.data.recipes.map(rec => {
       return {
@@ -133,7 +130,14 @@ export const uploadRecipe = async function (newRecipe) {
             'Wrong ingredient format! Please use the correct format :)'
           );
 
-        const [quantity, unit, description] = ingArr;
+        let [quantity, unit, description] = ingArr;
+
+        if (quantity.includes('/')) {
+          const fractionArr = quantity.split('/');
+          const numerator = +fractionArr[0];
+          const denominator = +fractionArr[1];
+          quantity = numerator / denominator;
+        }
 
         return { quantity: quantity ? +quantity : null, unit, description };
       });
